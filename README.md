@@ -1,1 +1,13 @@
-# note-taker
+# Note Taker
+
+## Description
+
+
+
+## Deployed Application 
+
+
+
+## Screenshots 
+
+
