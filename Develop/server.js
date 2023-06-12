@@ -3,33 +3,28 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const api = require('./routes/index.js');
+const api = require('./routes/routes.js');
 
 
-// Middleware for parsing JSON and urlencoded form data
+
+// Middleware 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use('/api', api);
+app.use(express.static('public'));
 
 
-//Root URL
-app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/index.html'))
-  })
-
+//Homepage 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'))
+});
 
 //Load Notes
 app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/notes.html'))
-  });
-
-
-
-// Add Notes
-
-
-
-// Delete Notes 
+  console.log('here')
+  res.sendFile(path.join(__dirname, './public/notes.html'))
+});
 
 
 // Default response for any other request (Not Found)
