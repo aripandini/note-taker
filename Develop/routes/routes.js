@@ -7,14 +7,14 @@ const app = express();
 
 
 //Open Notes
-app.get('api/notes', (req, res) => {
-  readFromFile('../db/db.json').then((data) =>
-  res.json(data)
+app.get('/notes', (req, res) => {
+  readFromFile('./db/db.json').then((data) =>
+  res.json(JSON.parse(data))
   );
 });
 
 //New Note
-app.post('api/notes', (req, res) => {
+app.post('/notes', (req, res) => {
   const { title, text } = req.body;
 
   if(title && text) {
