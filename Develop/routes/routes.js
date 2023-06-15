@@ -5,7 +5,6 @@ const { v4: uuidv4 } = require('uuid'); //To generate unique ids
 
 const app = express();
 
-
 //Open Notes
 app.get('/notes', (req, res) => {
   readFromFile('./db/db.json').then((data) =>
@@ -42,21 +41,12 @@ app.delete('/notes/:id', (req, res) => {
   readFromFile('./db/db.json')
     .then((data) => JSON.parse(data))
     .then((json) => {
-      // Make a new array of all tips except the one with the ID provided in the URL
       const result = json.filter((note) => note.id !== noteId);
-
-      // Save that array to the filesystem
       writeToFile('./db/db.json', result);
 
       // Respond to the DELETE request
-      res.json(`${noteId} has been deleted 🗑️`);
+      res.json(`${noteId} has been deleted`);
     });
 });
 
-
-
 module.exports = app;
-
-
-
-
