@@ -11,4 +11,4 @@ This Note Taker Application allows you to create new notes, save and delete them
 
 ## Screenshots 
 
-![alt text](./develop/screenshot/module-11-challenge_notes.png)
+![note-taker](./Develop/screenshot/module-11-challenge_notes.png)
