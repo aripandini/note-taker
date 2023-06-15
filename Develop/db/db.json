@@ -1,11 +1,7 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text"
-    },
-    {
-        "title": "Hello",
-        "text": "World",
-        "id": "f2c3df22-0242-486f-acfd-89972bc4193f"
+        "title": "Getting Started ",
+        "text": "In order for you to be able to use this Note Taker, you must include a title and body text for your notes.\n\nTo create a new note:\nClick the ➕ icon on the right corner of the screen. \n\nTo save a note:\nClick the 💾 icon. You'll be able to come back at any time and retrieve your saved notes. \n\nTo delete a note: \nClick the 🗑️ icon next to the respective note you'd like to delete. ",
+        "id": "1391c940-4d72-4612-b5f9-648c46012374"
     }
 ]

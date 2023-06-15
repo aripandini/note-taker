@@ -1,10 +1,9 @@
 const express = require('express');
 const db = require('../db/db.json');
-const { readAndAppend, readFromFile } = require('../helpers/fsUtils');
+const { readFromFile, writeToFile, readAndAppend } = require('../helpers/fsUtils');
 const { v4: uuidv4 } = require('uuid'); //To generate unique ids
 
 const app = express();
-
 
 //Open Notes
 app.get('/notes', (req, res) => {
@@ -36,9 +35,18 @@ app.post('/notes', (req, res) => {
   }
 });
 
+//Delete Note
+app.delete('/notes/:id', (req, res) => {
+  const noteId = req.params.id;
+  readFromFile('./db/db.json')
+    .then((data) => JSON.parse(data))
+    .then((json) => {
+      const result = json.filter((note) => note.id !== noteId);
+      writeToFile('./db/db.json', result);
+
+      // Respond to the DELETE request
+      res.json(`${noteId} has been deleted`);
+    });
+});
 
 module.exports = app;
-
-
-
-
