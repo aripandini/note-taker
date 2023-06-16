@@ -6,9 +6,9 @@ This Note Taker Application allows you to create new notes, save and delete them
 
 ## Deployed Application 
 
-[Deployed Application on Heroku](LINK)
+[Deployed Application on Heroku](https://ap-notetaker-9e03b89a2442.herokuapp.com/)
 
 
 ## Screenshots 
 
-![note-taker](./Develop/screenshot/module-11-challenge_notes.png)
+![note-taker](./screenshot/module-11-challenge_notes.png)
